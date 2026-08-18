@@ -1,0 +1,156 @@
+:root{
+      --cream: #F7F2EA;
+      --brown: #3f2b20;
+      --gold: #C9A66A;
+      --muted: #6b6159;
+      --card-w: 340px;
+      --card-h: 420px;
+    }
+
+    body {
+      font-family: 'Poppins', system-ui, -apple-system, 'Segoe UI', Roboto, Arial;
+      background: var(--cream);
+      color: #222;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+
+    .brand-heading { font-family: 'Playfair Display', serif; }
+
+    /* HERO background + gradient overlay from bottom -> top (dark) */
+    .hero {
+      position: relative;
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+    }
+    /* Strong bottom-to-top black gradient covering hero */
+    .hero::after{
+      content: "";
+      position: absolute;
+      inset: 0;
+      /* bottom strong, top transparent */
+      background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.6) 25%, rgba(0,0,0,0.35) 50%, rgba(0,0,0,0.12) 75%, rgba(0,0,0,0) 100%);
+      pointer-events: none;
+    }
+
+
+    /* In your CSS file (style.css), add or modify this rule */
+
+/* Ensure the modal is on top of everything, especially the fixed navbar and hero content */
+#checkout-modal {
+  /* It is currently set with z-60 in the HTML, but a higher explicit value is safer */
+  z-index: 1000; /* Set a very high z-index to ensure it sits on top */
+}
+
+/* Custom fix for the featured card's clickability in the hero section on desktop */
+.hero-content .mil-card {
+  position: relative; 
+  z-index: 20; /* Ensure it is higher than the hero's gradient overlay (which is part of the hero section) */
+}
+    /* Card sizing */
+    .mil-card { width: var(--card-w); min-width: var(--card-w); max-width: 92%; height: var(--card-h); }
+    .mil-card img { height: calc(var(--card-h) * 0.55); object-fit: cover; width: 100%; display:block; border-radius: 8px; }
+
+    /* Drawer & modal backdrop */
+    .backdrop { background: rgba(0,0,0,0.45); }
+
+    /* Hide scroll when modal open */
+    .hide-scroll { overflow: hidden; }
+
+    /* Focus outlines */
+    :focus { outline: 3px solid rgba(201,166,106,0.18); outline-offset: 2px; }
+
+    /* Responsive tweaks */
+    @media (max-width: 1024px){
+      :root { --card-w: 320px; --card-h: 420px; }
+    }
+
+    /* HERO LAYOUT: Desktop row, Mobile column */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: 1.5rem;
+      padding: 2.25rem;
+      align-items: center; /* vertical alignment on desktop */
+      justify-content: space-between;
+    }
+    @media (max-width: 1024px){
+      .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 1.25rem;
+        justify-content: center;
+      }
+    }
+
+    /* Adaptive text styling to remain readable on overlay */
+    .hero-title { color: white; text-shadow: 0 2px 18px rgba(0,0,0,0.6); }
+    .hero-sub { color: rgba(255,255,255,0.92); text-shadow: 0 2px 14px rgba(0,0,0,0.55); }
+
+    /* Buttons */
+    .btn-primary { background: var(--brown); color: white; }
+    .btn-ghost { background: rgba(255,255,255,0.95); color: var(--brown); border: 1px solid rgba(63,43,32,0.08); }
+
+    /* Product cards grid (centered on mobile) */
+    .products-wrap { display:flex; flex-wrap:wrap; justify-content:center; gap:1.25rem; }
+    .mil-card .meta { color: var(--muted); }
+
+    /* smaller image crop fix for hero card */
+    .mil-card .hero-img { height: 220px; object-fit: cover; border-radius: 8px; }
+
+    /* ensure hero text contrasts well on very dark backgrounds on small screens */
+    @media (max-width:640px){
+      .hero-title { font-size: 1.6rem; line-height:1.05; }
+      .hero-sub { font-size: 0.95rem; }
+    }
+
+
+    
+
+    /* --- Floating WhatsApp Button Pulse Animation --- */
+
+/* Keyframes for the pulse effect */
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7); /* Starting pulse color (Green-500 equivalent) */
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(39, 174, 96, 0); /* Outer shadow expands and fades */
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+  }
+}
+
+/* --- Floating WhatsApp Button Pulse Animation --- */
+
+@keyframes whatsapp-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 12px rgba(39, 174, 96, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(39, 174, 96, 0);
+  }
+}
+
+.whatsapp-float {
+  /* Set the button to sit above all content */
+  position: fixed; 
+  z-index: 999; 
+  /* Apply the pulse animation */
+  animation: whatsapp-pulse 2s infinite; 
+  /* Ensure text wrap is prevented */
+  white-space: nowrap; 
+}

@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Milana Clothing — Kurthis & Gift Hampers</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body class="antialiased">
+
+  <!-- NAV -->
+  <header class="fixed w-full z-40 bg-white/80 backdrop-blur-sm shadow-sm">
+    <div class="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
+      <a href="#" class="brand-heading text-2xl text-[var(--brown)] font-semibold">Milana <span class="text-[var(--gold)] font-bold">Clothing</span></a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm">
+        <a href="#home" class="hover:text-[var(--brown)] text-gray-700">Home</a>
+        <a href="#collections" class="hover:text-[var(--brown)] text-gray-700">Collections</a>
+        <a href="#hampers" class="hover:text-[var(--brown)] text-gray-700">Gift Hampers</a>
+        <a href="#about" class="hover:text-[var(--brown)] text-gray-700">About</a>
+        <a href="#contact" class="hover:text-[var(--brown)] text-gray-700">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <button id="cart-btn" aria-label="Open cart" class="relative p-2 rounded hover:bg-gray-50">
+          <svg class="w-6 h-6 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2 6h13"></path></svg>
+          <span id="cart-count" class="absolute -top-2 -right-3 bg-[var(--brown)] text-white text-xs rounded-full px-1">0</span>
+        </button>
+
+        <button id="mobile-menu-button" class="md:hidden p-2 rounded hover:bg-gray-50" aria-label="Open menu">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- mobile nav -->
+    <div id="mobile-nav" class="hidden md:hidden bg-white/95 border-t">
+      <a href="#home" class="block py-3 px-5 border-b">Home</a>
+      <a href="#collections" class="block py-3 px-5 border-b">Collections</a>
+      <a href="#hampers" class="block py-3 px-5 border-b">Gift Hampers</a>
+      <a href="#contact" class="block py-3 px-5">Contact</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <main class="pt-16">
+    <section id="home" class="hero" style="background-image: url('./assets/bg-hero.jpg');">
+      <div class="hero-content">
+
+        <!-- LEFT: text block (desktop: left; mobile: top) -->
+        <div class="lg:w-1/2 w-full">
+          <h1 class="hero-title brand-heading text-4xl sm:text-5xl md:text-6xl leading-tight" style="margin-top: 35px;">Timeless Kurthis<br class="hidden md:block"> & Thoughtful Hampers</h1>
+
+          <!-- MOBILE: Featured Card placed right after heading and before paragraph -->
+          <div class="mt-6 mb-6 md:hidden w-full flex justify-center">
+            <div class="mil-card bg-white rounded-xl shadow-lg p-4">
+              <img src="assets/product01.png" alt="Featured kurti" class="hero-img rounded-md w-full">
+              <div class="mt-4 flex-1 text-gray-800">
+                <div class="text-sm meta">Featured</div>
+                <div class="font-semibold text-lg text-[var(--brown)]">Linen Short Kurti</div>
+                <div class="mt-2 text-sm meta">Lightweight & comfortable — crafted for everyday elegance.</div>
+              </div>
+              <div class="mt-3 flex gap-3">
+                <button class="add-to-cart flex-1 px-4 py-2 bg-[var(--gold)] text-[var(--brown)] font-semibold rounded-md text-sm" data-id="p1" data-name="Linen Short Kurti" data-price="999">Add to cart</button>
+                <button class="view-detail px-4 py-2 border border-[var(--brown)] text-[var(--brown)] rounded-md text-sm">View</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="hero-sub mt-4 max-w-xl mx-auto md:mx-0">Handpicked fabrics, gentle tailoring and curated gift hampers designed to delight. Shop with ease — crafted for modern feminine style.</p>
+
+          <div class="mt-7 flex gap-3 justify-center lg:justify-start">
+            <a href="#collections" class="btn-primary px-6 py-3 rounded-full shadow transition">Shop Collection</a>
+            <a href="#hampers" class="btn-ghost px-6 py-3 rounded-full transition">Gift Hampers</a>
+          </div>
+
+        </div>
+
+        <!-- RIGHT: featured card (desktop only) -->
+        <div class="lg:w-1/2 w-full flex justify-center lg:justify-end">
+          <div class="mil-card bg-white rounded-xl shadow-lg p-4 hidden md:block">
+            <img src="assets/product01.png" alt="Featured kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <div class="text-sm meta">Featured</div>
+              <div class="font-semibold text-lg text-[var(--brown)]">Linen Short Kurti</div>
+              <div class="mt-2 text-sm meta">Lightweight & comfortable — crafted for everyday elegance.</div>
+            </div>
+            <div class="mt-3 flex gap-3">
+              <button class="add-to-cart flex-1 px-4 py-2 bg-[var(--gold)] text-[var(--brown)] font-semibold rounded-md text-sm" data-id="p1" data-name="Linen Short Kurti" data-price="999">Add to cart</button>
+              <button class="view-detail px-4 py-2 border border-[var(--brown)] text-[var(--brown)] rounded-md text-sm">View</button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section id="collections" class="py-16 bg-[var(--cream)]">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center mb-8">
+          <h2 class="brand-heading text-3xl text-[var(--brown)]">Collections</h2>
+          <p class="mt-2 text-[var(--muted)]">Short Kurtis • Kurtis • Gift Hampers</p>
+        </div>
+
+        <div class="products-wrap">
+          <!-- product cards sized like featured -->
+          <article class="mil-card bg-white rounded-lg shadow p-5 flex flex-col">
+            <img src="assets/product02.jpg" alt="Cotton Kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <h3 class="font-semibold text-[var(--brown)]">Cotton Short Kurti</h3>
+              <p class="text-sm meta mt-1">Everyday comfort with delicate prints.</p>
+            </div><hr>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 799</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="p2" data-name="Cotton Short Kurti" data-price="799">Add</button>
+            </div>
+          </article>
+
+          <article class="mil-card bg-white rounded-lg shadow p-5 flex flex-col">
+            <img src="assets/product03.jpg" alt="Embroidered Kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <h3 class="font-semibold text-[var(--brown)]">Embroidered Kurti</h3>
+              <p class="text-sm meta mt-1">Hand-embroidery for a premium look.</p>
+            </div><hr>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 1499</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="p3" data-name="Embroidered Kurti" data-price="1499">Add</button>
+            </div>
+          </article>
+
+          <article class="mil-card bg-white rounded-lg shadow p-5 flex flex-col">
+            <img src="assets/product04.jpg" alt="Chanderi Kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <h3 class="font-semibold text-[var(--brown)]">Chanderi Kurti</h3>
+              <p class="text-sm meta mt-1">Subtle shimmer for special days.</p>
+            </div><hr>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 1999</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="p4" data-name="Chanderi Kurti" data-price="1999">Add</button>
+            </div>
+          </article>
+
+          <article class="mil-card bg-white rounded-lg shadow p-5 flex flex-col">
+            <img src="assets/product05.jpg" alt="Daily Short Kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <h3 class="font-semibold text-[var(--brown)]">Daily Short Kurti</h3>
+              <p class="text-sm meta mt-1">Comfort-fit for casual days.</p>
+            </div><hr>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 699</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="p5" data-name="Daily Short Kurti" data-price="699">Add</button>
+            </div>
+          </article>
+
+          <article class="mil-card bg-white rounded-lg shadow p-5 flex flex-col">
+            <img src="assets/product06.jpg" alt="Silk Kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <h3 class="font-semibold text-[var(--brown)]">Silk Kurti</h3>
+              <p class="text-sm meta mt-1">Rich fabric, classic tailoring.</p>
+            </div><hr>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 2499</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="p6" data-name="Silk Kurti" data-price="2499">Add</button>
+            </div>
+          </article>
+
+          <article class="mil-card bg-white rounded-lg shadow p-5 flex flex-col">
+            <img src="assets/product07.jpg" alt="Floral Long Kurti" class="rounded-md">
+            <div class="mt-4 flex-1">
+              <h3 class="font-semibold text-[var(--brown)]">Floral Long Kurti</h3>
+              <p class="text-sm meta mt-1">Elegant silhouette for occasions.</p>
+            </div><hr>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 1299</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="p7" data-name="Floral Long Kurti" data-price="1299">Add</button>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- HAMPERS -->
+    <section id="hampers" class="py-16">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="text-center mb-8">
+          <h2 class="brand-heading text-3xl text-[var(--brown)]">Gift Hampers</h2>
+          <p class="mt-2 text-[var(--muted)]">Curated boxes for special moments — beautifully packaged.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <article class="p-6 rounded-lg bg-[rgba(235,224,214,0.6)] shadow">
+            <h3 class="font-semibold text-[var(--brown)]">Starter Hamper</h3>
+            <p class="text-sm text-[var(--muted)] mt-2">Short kurti + accessory + gift wrap.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 1299</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="h1" data-name="Starter Hamper" data-price="1299">Add</button>
+            </div>
+          </article>
+
+          <article class="p-6 rounded-lg bg-[rgba(235,224,214,0.6)] shadow">
+            <h3 class="font-semibold text-[var(--brown)]">Festive Hamper</h3>
+            <p class="text-sm text-[var(--muted)] mt-2">Premium kurti + hand-note + packaging.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 1999</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="h2" data-name="Festive Hamper" data-price="1999">Add</button>
+            </div>
+          </article>
+
+          <article class="p-6 rounded-lg bg-[rgba(235,224,214,0.6)] shadow">
+            <h3 class="font-semibold text-[var(--brown)]">Deluxe Gift Box</h3>
+            <p class="text-sm text-[var(--muted)] mt-2">Kurti + accessories + premium packaging.</p>
+            <div class="mt-4 flex items-center justify-between">
+              <div class="text-[var(--gold)] font-semibold">₹ 2799</div>
+              <button class="add-to-cart px-3 py-2 bg-[var(--brown)] text-white rounded-md text-sm" data-id="h3" data-name="Deluxe Gift Box" data-price="2799">Add</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="py-16 bg-[var(--cream)]">
+      <div class="max-w-4xl mx-auto px-5 text-center">
+        <h2 class="brand-heading text-3xl text-[var(--brown)]">About Milana</h2>
+        <p class="mt-4 text-[var(--muted)]">Milana Clothing is a boutique label focused on thoughtful design, comfortable fabrics and the small details that make an outfit feel special. We blend timeless silhouettes with a modern touch — created for real moments.</p>
+      </div>
+    </section>
+
+   
+<section id="contact" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <!-- Heading -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold text-gray-900 tracking-wide">Let’s Connect</h2>
+      <p class="mt-3 text-gray-500 text-sm max-w-2xl mx-auto">
+        Have a custom order, collaboration idea, or business inquiry? Reach out to us directly or drop a quick message below.
+      </p>
+    </div>
+
+    <!-- Grid -->
+    <div class="grid md:grid-cols-2 gap-14 bg-white">
+
+      <!-- Left: Contact Methods -->
+      <div class="space-y-8">
+        
+        <div>
+          <h3 class="text-xl font-semibold text-[var(--brown)] mb-3">Contact Details</h3>
+          <p class="text-gray-500 text-sm">
+            Get in touch via email or phone. We usually respond within *24 hours*.
+          </p>
+        </div>
+
+        <div class="space-y-4 text-sm">
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--brown)]/10 text-[var(--brown)]">
+              ✉️
+            </span>
+            <a href="mailto:info@milana.com" class="text-gray-700 hover:text-[var(--brown)] transition">
+              info@milana.com
+            </a>
+          </div>
+
+          <div class="flex items-center gap-3">
+            <span class="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--brown)]/10 text-[var(--brown)]">
+              📞
+            </span>
+            <a href="tel:+917593046852" class="text-gray-700 hover:text-[var(--brown)] transition">
+              +91 75930 46852
+            </a>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <div class="h-px bg-gray-200 w-2/3"></div>
+        </div>
+
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Prefer WhatsApp or Instagram? Share your request and we’ll take it from there.
+        </p>
+      </div>
+
+      <!-- Right: Form Card -->
+     <form id="lead-form" class="space-y-5 bg-white p-7 rounded-xl border border-gray-300 shadow-sm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="188402d9-6532-4951-9eb6-4993789a731b">
+    
+    <input type="hidden" name="subject" value="New Contact Form Submission from Milana Clothing"> 
+    
+    <h3 class="text-xl font-semibold text-gray-800">Send a Message</h3>
+
+    <div>
+        <label class="block text-xs font-medium text-gray-500 mb-1">NAME</label>
+        <input type="text" id="lead-name" name="Name" required
+            class="w-full px-3 py-2 border rounded-lg text-sm border-gray-300 focus:ring-[var(--brown)] focus:border-[var(--brown)] outline-none transition"
+            placeholder="Your name">
+    </div>
+
+    <div>
+        <label class="block text-xs font-medium text-gray-500 mb-1">EMAIL</label>
+        <input type="email" id="lead-email" name="Email"
+            class="w-full px-3 py-2 border rounded-lg text-sm border-gray-300 focus:ring-[var(--brown)] focus:border-[var(--brown)] outline-none transition"
+            placeholder="you@example.com">
+    </div>
+
+    <div>
+        <label class="block text-xs font-medium text-gray-500 mb-1">MESSAGE</label>
+        <textarea id="lead-msg" rows="4" name="Message"
+            class="w-full px-3 py-2 border rounded-lg text-sm border-gray-300 focus:ring-[var(--brown)] focus:border-[var(--brown)] outline-none transition"
+            placeholder="Write your message here..."></textarea>
+    </div>
+
+    <div class="text-right pt-2">
+        <button type="submit"
+
+            class="px-5 py-2.5 bg-[var(--brown)]  text-white text-sm font-medium rounded-lg transition">
+
+            Send Message
+
+          </button>
+    </div>
+
+    <p id="lead-result" class="text-sm mt-2 hidden text-center"></p>
+</form>
+
+    </div>
+  </div>
+</section>
+
+<a href="https://wa.me/917593046852?text=Hello%20Milana%20Clothing,%20I%20have%20a%20question%20about%20your%20products."
+   target="_blank"
+   rel="noopener noreferrer"
+   class="fixed bottom-6 right-6 z-50 py-2 px-3 bg-green-500 rounded-full shadow-lg hover:bg-green-600 transition-colors duration-300 whatsapp-float flex items-center gap-2"
+   aria-label="Contact us on WhatsApp to order">
+    
+    <i class="fab fa-whatsapp text-white text-xl"></i>
+    
+    <span class="text-white font-semibold text-sm mr-1">Order Now</span>
+
+</a>
+
+
+
+    <footer class="bg-gray-800 text-gray-300 border-t border-gray-700">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col md:flex-row items-center justify-between gap-6">
+
+    <div class="flex flex-col items-center md:items-start text-center md:text-left space-y-2">
+      <h3 class="text-xl font-semibold text-white">Milana Clothing</h3>
+      <p class="text-sm text-gray-400">Style that speaks. Quality that lasts.</p>
+      <div class="text-xs text-gray-500 pt-2">
+        &copy; <span id="yr"></span> Milana Clothing. All rights reserved.
+      </div>
+    </div>
+
+    <div class="flex space-x-6">
+  <a href="#" class="text-gray-400 hover:text-pink-400 transition duration-300" aria-label="Instagram">
+    <i class="fab fa-instagram fa-lg"></i>
+  </a>
+  <a href="https://wa.me/917593046852" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-green-400 transition duration-300" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp fa-lg"></i>
+  </a>
+</div>
+
+
+    <div class="text-sm text-gray-500">
+      Made with <span class="text-red-500">♥</span> by <a href="https://www.instagram.com/wagoncloudstudio" target="_blank" rel="noopener noreferrer" class="hover:text-white transition duration-200 font-medium">wagoncloud studio</a>
+    </div>
+
+  </div>
+</footer>
+
+  <!-- CART DRAWER -->
+  <div id="cart-drawer" class="fixed inset-0 hidden z-50">
+    <div id="cart-backdrop" class="absolute inset-0 backdrop"></div>
+    <aside class="absolute right-0 top-0 h-full w-full sm:w-[480px] bg-white shadow-lg p-6 overflow-auto transform transition-transform">
+      <div class="flex items-center justify-between mb-4">
+        <h3 class="text-xl font-semibold">Your Cart</h3>
+        <div class="flex items-center gap-3">
+          <button id="close-cart" class="text-gray-600 px-3 py-1 rounded hover:bg-gray-50">Close</button>
+        </div>
+      </div>
+
+      <div id="cart-items" class="space-y-4"></div>
+
+      <div class="mt-6 border-t pt-4">
+        <div class="flex justify-between items-center mb-3">
+          <div class="text-sm text-gray-600">Subtotal</div>
+          <div id="cart-subtotal" class="font-bold">₹ 0</div>
+        </div>
+        <div class="flex gap-3">
+          <button id="open-checkout" class="flex-1 px-4 py-3 bg-[var(--gold)] text-[var(--brown)] rounded-lg font-semibold">Checkout via WhatsApp</button>
+          <button id="clear-cart" class="px-4 py-3 border rounded-lg">Clear</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <!-- CHECKOUT SUMMARY MODAL (no payment gateway) -->
+  <div id="checkout-modal" class="fixed inset-0 hidden z-60">
+    <div id="checkout-backdrop" class="absolute inset-0 backdrop"></div>
+
+    <div class="relative z-10 max-w-md mx-auto mt-28 bg-white rounded-lg shadow-lg overflow-hidden">
+      <div class="p-5">
+        <div class="flex items-center justify-between mb-4">
+          <h3 class="text-xl font-semibold">Order Summary</h3>
+          <button id="close-checkout" class="text-gray-600 px-2 py-1 rounded hover:bg-gray-50">Close</button>
+        </div>
+
+        <div id="checkout-items" class="space-y-3 mb-4"></div>
+
+        <div class="flex justify-between items-center mb-4">
+          <div class="text-sm text-gray-700">Subtotal</div>
+          <div id="checkout-subtotal" class="font-bold">₹ 0</div>
+        </div>
+
+        <div class="flex gap-3">
+          <button id="checkout-whatsapp" class="flex-1 px-4 py-3 bg-[var(--brown)] text-white rounded-lg font-semibold">Checkout on WhatsApp</button>
+          <button id="checkout-cancel" class="px-4 py-3 border rounded-lg">Cancel</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="script.js"></script>
+</body>
+</html>
